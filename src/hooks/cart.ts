@@ -9,7 +9,12 @@ export default function useCart() {
     return cart
   }
 
+  function addToCart(product: product) {
+    setCart(old => [...old, product])
+  }
+
   return {
-    getCart
+    getCart,
+    addToCart
   }
 }
