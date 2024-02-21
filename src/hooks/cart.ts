@@ -13,8 +13,13 @@ export default function useCart() {
     setCart(old => [...old, product])
   }
 
+  function removeFromCart(productId: number) {
+    setCart(oldCart => oldCart.filter(item => item.id !== productId))
+  }
+
   return {
     getCart,
-    addToCart
+    addToCart,
+    removeFromCart
   }
 }

@@ -1,4 +1,3 @@
-/** @jest-environment jsdom */
 import { describe, test, expect, vi } from "vitest"
 import {renderHook} from '@testing-library/react'
 import useCart from '../src/hooks/cart'
@@ -29,5 +28,18 @@ describe('Cart', () => {
 
     expect(result.current.getCart())
       .toStrictEqual([product])
+  })
+
+  test('Should remove a product of cart', () => {
+    const { result, rerender } = renderHook(() => useCart())
+    const product = productMock()
+
+    result.current.addToCart(product)
+    rerender()
+
+    result.current.removeFromCart(product.id)
+    rerender()
+
+    expect(result.current.getCart()).toEqual([])
   })
 })
