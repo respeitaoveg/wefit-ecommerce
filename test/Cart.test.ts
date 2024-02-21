@@ -23,7 +23,6 @@ describe('Cart', () => {
     const product = productMock()
 
     result.current.addToCart(product)
-
     rerender()
 
     expect(result.current.getCart())
