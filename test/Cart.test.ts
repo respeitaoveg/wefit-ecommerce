@@ -1,8 +1,13 @@
 /** @jest-environment jsdom */
-import { test } from "vitest"
+import { describe, test, expect } from "vitest"
 import {renderHook} from '@testing-library/react'
 import useCart from '../src/hooks/cart'
 
-test('Should be return empty cart', () => {
-  const { result } = renderHook(() => useCart())
+
+describe('Cart', () => {
+  test('Should initialize with an empty cart', () => {
+    const { result } = renderHook(() => useCart())
+
+    expect(result.current.getCart()).toEqual([])
+  })
 })
