@@ -1,13 +1,9 @@
-import { test, expect } from "bun:test"
+import { test, expect } from "vitest"
 
 test('Should have a list of products with length greater than zero', async () => {
   const allProducts = await fetch('http://localhost:3000/products')
-    .then(response => {
-      if (!response.ok) expect().fail('Response not OK')
+    .then(response => response.json())
 
-      return response.json()
-    })
-
-  expect(allProducts).toBeArray()
+  expect(Array.isArray(allProducts)).toBeTruthy()
   expect(allProducts.length).toBeGreaterThan(0)
 })
