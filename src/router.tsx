@@ -4,10 +4,8 @@ import App from './App.tsx'
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
-  },
-  {
-    path: "/teste",
-    element: <App />,
-  },
-]);
+    element: <App>
+      <div>teste</div>
+    </App>
+  }
+])
