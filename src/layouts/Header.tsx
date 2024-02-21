@@ -14,7 +14,6 @@ const HeaderContainer = styled.div`
 const Title = styled.p`
   font-weight: 700;
   font-size: 20px;
-  line-height: 27.24px;
 `;
 
 export default function Header() {
