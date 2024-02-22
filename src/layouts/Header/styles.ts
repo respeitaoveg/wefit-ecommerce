@@ -7,10 +7,10 @@ export const HeaderContainer = styled.div`
   align-items: center;
   height: 70px;
   padding: 16px;
-  cursor: pointer;
 `;
 
 export const Title = styled.p`
   font-weight: 700;
   font-size: 20px;
+  cursor: pointer;
 `;

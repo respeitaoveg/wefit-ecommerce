@@ -6,8 +6,8 @@ import { HeaderContainer, Title } from "./styles";
 export default function Header() {
   const navigate = useNavigate();
 
-  return <HeaderContainer onClick={() => navigate('/')}>
-    <Title>WeMovies</Title>
+  return <HeaderContainer>
+    <Title onClick={() => navigate('/')}>WeMovies</Title>
     <CartMenu />
   </HeaderContainer>
 }
