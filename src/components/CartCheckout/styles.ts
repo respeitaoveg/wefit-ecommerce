@@ -7,7 +7,7 @@ export const CartCheckoutContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
   border-radius: 4px;
   padding: 24px;
   max-width: calc(950px - 48px);
