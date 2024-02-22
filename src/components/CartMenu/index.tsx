@@ -9,10 +9,18 @@ export default function CartMenu() {
   const navigate = useNavigate();
   const value = useContext(CartContext)
 
+  const quantityDifferentProducts = value.getCart().length
+
+  function changeTextItem() {
+    if (quantityDifferentProducts === 1) return 'item'
+
+    return 'itens'
+  }
+
   return <CartMenuContainer onClick={() => navigate('/cart')}>
     <TitleContainer>
       <Title>Meu Carrinho</Title>
-      <Subtitle>{value.getCart().length} itens</Subtitle>
+      <Subtitle>{quantityDifferentProducts} {changeTextItem()}</Subtitle>
     </TitleContainer>
     <BagIcon />
   </CartMenuContainer>
