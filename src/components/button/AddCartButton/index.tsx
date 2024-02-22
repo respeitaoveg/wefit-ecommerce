@@ -12,7 +12,7 @@ export default function AddCartButton({ product }: AddCartButtonProps) {
   const value = useContext(CartContext)
   const productInCart = value.getItemCart(product.id)
 
-  return <ContainerAddCartButton bgColor={!!productInCart} onClick={() => value.addToCart(product)}>
+  return <ContainerAddCartButton $bgColor={!!productInCart} onClick={() => value.addToCart(product)}>
     <Counter>
       <CartPlusIcon />
       <div>{productInCart?.quantity || 0}</div>

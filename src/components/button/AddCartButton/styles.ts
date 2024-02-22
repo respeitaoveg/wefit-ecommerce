@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const ContainerAddCartButton = styled.div`
-  background-color: ${props => props.bgColor ? '#039B00' : '#009EDD'};
+export const ContainerAddCartButton = styled.div< {$bgColor: boolean}>`
+  background-color: ${props => props.$bgColor ? '#039B00' : '#009EDD'};
   color: #FFF;
   display: flex;
   flex-direction: row;
