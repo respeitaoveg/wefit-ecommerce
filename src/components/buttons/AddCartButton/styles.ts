@@ -10,7 +10,7 @@ export const ContainerAddCartButton = styled.div< {$bgColor: boolean}>`
   gap: 12px;
   padding: 8px;
   border-radius: 4px;
-  height: 40px;
+  height: 24px;
   width: calc(100% - 16px);
   cursor: pointer;
 `;
