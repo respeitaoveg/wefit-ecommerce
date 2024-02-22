@@ -7,9 +7,9 @@ import { CartContext } from "../../contexts/Cart";
 
 export default function CartMenu() {
   const navigate = useNavigate();
-  const value = useContext(CartContext)
+  const cart = useContext(CartContext)
 
-  const quantityDifferentProducts = value.getCart().length
+  const quantityDifferentProducts = cart.getCart().length
 
   function changeTextItem() {
     if (quantityDifferentProducts === 1) return 'item'
