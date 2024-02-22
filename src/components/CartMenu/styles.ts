@@ -6,6 +6,7 @@ export const CartMenuContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 `;
 
 export const TitleContainer = styled.div`
