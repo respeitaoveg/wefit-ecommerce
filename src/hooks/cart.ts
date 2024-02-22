@@ -53,10 +53,15 @@ export default function useCart(): cart {
     setCart(updatedCart);
   }
 
+  function clearCart() {
+    setCart([])
+  }
+
   return {
     getCart,
     getItemCart,
     addToCart,
-    removeFromCart
+    removeFromCart,
+    clearCart
   }
 }

@@ -90,4 +90,18 @@ describe('Cart', () => {
 
     expect(item).toBeTruthy()
   })
+
+  test('Should clear the cart', () => {
+    const { result, rerender } = renderHook(() => useCart())
+    const product = productMock()
+
+    result.current.addToCart(product)
+    rerender()
+    result.current.addToCart(product)
+    rerender()
+    result.current.clearCart()
+    rerender()
+
+    expect(result.current.getCart()).toEqual([])
+  })
 })
