@@ -9,16 +9,22 @@ interface AddCartButtonProps {
   product: product
 }
 export default function AddCartButton({ product }: AddCartButtonProps) {
-  const value = useContext(CartContext)
-  const productInCart = value.getItemCart(product.id)
+  const cart = useContext(CartContext)
+  const productInCart = cart.getItemCart(product.id)
 
-  return <ContainerAddCartButton $bgColor={!!productInCart} onClick={() => value.addToCart(product)}>
+  function changeTextItemAdded() {
+    if (productInCart) return 'ITEM ADICIONADO'
+
+    return 'ADICIONAR AO CARRINHO'
+  }
+
+  return <ContainerAddCartButton $bgColor={!!productInCart} onClick={() => cart.addToCart(product)}>
     <Counter>
       <CartPlusIcon />
       <div>{productInCart?.quantity || 0}</div>
     </Counter>
     <Description>
-      ADICIONAR AO CARRINHO
+      {changeTextItemAdded()}
     </Description>
   </ContainerAddCartButton>
 }
