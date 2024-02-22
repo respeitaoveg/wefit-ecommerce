@@ -47,7 +47,7 @@ describe('Cart', () => {
     expect(result.current.getCart()).toEqual([])
   })
 
-  test('Should add a product using counter in product', () => {
+  test('Should add two products using the quantity property', () => {
     const { result, rerender } = renderHook(() => useCart())
     const product = productMock()
 
@@ -60,5 +60,22 @@ describe('Cart', () => {
     const cart = result.current.getCart()
 
     expect(cart[0].quantity).toEqual(2)
+  })
+
+  test('Should add and remove products using the quantity property', () => {
+    const { result, rerender } = renderHook(() => useCart())
+    const product = productMock()
+
+    result.current.addToCart(product)
+    rerender()
+    result.current.addToCart(product)
+    rerender()
+    result.current.removeFromCart(product.id)
+    rerender()
+
+
+    const cart = result.current.getCart()
+
+    expect(cart[0].quantity).toEqual(1)
   })
 })

@@ -4,7 +4,7 @@ import cart, { item } from "../entities/cart.entity";
 
 
 export default function useCart(): cart {
-  const [cart, setCart] = useState<item[]>([])
+  const [cart, setCart] = useState<item[] | []>([])
 
   function getCart() {
     return cart
@@ -34,12 +34,24 @@ export default function useCart(): cart {
   }
 
   function removeFromCart(productId: number) {
-    setCart(oldCart => oldCart.filter(item => item.id !== productId))
-  }
+    const currentCart = getCart();
+    const updatedCart = currentCart.map(item => {
+        if (item.id === productId) {
+            const updatedQuantity = item.quantity - 1;
+            return {
+                ...item,
+                quantity: updatedQuantity <= 0 ? 0 : updatedQuantity
+            };
+        }
+        return item;
+    }).filter(item => item.quantity > 0)
 
-  return {
-    getCart,
-    addToCart,
-    removeFromCart
-  }
+    setCart(updatedCart);
+}
+
+return {
+  getCart,
+  addToCart,
+  removeFromCart
+}
 }
