@@ -11,6 +11,8 @@ export default function useCart(): cart {
   }
 
   function addToCart(product: product) {
+    console.log('>>>', cart)
+
     setCart(old => [...old, product])
   }
 

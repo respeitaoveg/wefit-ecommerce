@@ -9,32 +9,26 @@ import Finished from "./pages/Cart/Finished/index.tsx";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <App>
-      <DefaultLayout>
-        <ListProducts />
-      </DefaultLayout>
-    </App>
-  },
-  {
-    path: "cart",
+    element: <App />,
     children: [
       {
-        index: true,
-        element: <App>
-        <DefaultLayout>
-          <Cart />
-        </DefaultLayout>
-      </App>,
+        path: '/',
+        element: <ListProducts />
       },
       {
-        path: "finished",
-        element: <App>
-          <DefaultLayout>
-            <Finished />
-          </DefaultLayout>
-        </App>,
+        path: "cart",
+        children: [
+          {
+            index: true,
+            element: <Cart />,
+          },
+          {
+            path: "finished",
+            element: <Finished />,
+          }
+        ]
       }
     ]
-  },
+  }
 
 ])

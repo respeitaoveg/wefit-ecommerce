@@ -1,19 +1,18 @@
-import { ReactNode } from "react"
 import Header from "./layouts/Header"
 import styled from "styled-components";
-
-interface AppProps {
-  children: ReactNode
-}
+import DefaultLayout from "./layouts/DefaultLayout";
+import { Outlet } from "react-router-dom";
 
 const Container = styled.div`
   max-width: 960px;
   margin: 0 auto;
 `;
 
-export default function App({ children }: AppProps) {
+export default function App() {
   return <Container>
     <Header />
-    {children}
+    <DefaultLayout>
+      <Outlet />
+    </DefaultLayout>
   </Container>
 }

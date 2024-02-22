@@ -12,6 +12,7 @@ export const ContainerAddCartButton = styled.div`
   border-radius: 4px;
   height: 40px;
   width: calc(100% - 16px);
+  cursor: pointer;
 `;
 
 export const Description = styled.div`

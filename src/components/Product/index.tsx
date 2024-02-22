@@ -19,6 +19,6 @@ export default function Product(props: ProductProps) {
       </ContainerProductDetailImageTitle>
       <ProductPrice>R$ {product.price}</ProductPrice>
     </ContainerProductDetail>
-    <AddCartButton />
+    <AddCartButton product={product} />
   </ContainerProduct>
 }
