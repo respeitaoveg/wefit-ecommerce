@@ -1,5 +1,5 @@
 import { product } from "../../entities/product.entity";
-import AddCartButton from "../button/AddCartButton";
+import AddCartButton from "../buttons/AddCartButton";
 import { ContainerProduct, ContainerProductDetail, ContainerProductDetailImageTitle, ProductTitle, ProductPrice } from "./styles";
 
 

@@ -11,6 +11,7 @@ export const ButtonContainer = styled.div`
 `
 
 export const Text = styled.div`
+  color: #FFF;
   font-weight: 700;
   font-size: 14px;
 `

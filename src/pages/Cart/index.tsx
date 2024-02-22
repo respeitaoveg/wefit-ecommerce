@@ -10,7 +10,7 @@ export default function Cart() {
   return <>
   {(cart.getCart() && cart.getCart().length > 0)
   ? (
-    <CartCheckout cart={cart}></CartCheckout>
+    <CartCheckout></CartCheckout>
   ) : (
     <CartEmpty></CartEmpty>
   )}

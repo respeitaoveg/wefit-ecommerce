@@ -1,6 +1,6 @@
 import { CartEmptyContainer, Title } from "./styles";
 import emptyImage from "../../assets/images/empty.png"
-import Button from "../../components/button/Button";
+import Button from "../buttons/Button";
 import { useNavigate } from "react-router-dom";
 
 export default function CartEmpty() {

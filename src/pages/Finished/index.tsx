@@ -1,4 +1,4 @@
-import Button from "../../components/button/Button";
+import Button from "../../components/buttons/Button";
 import finishedImage from "../../assets/images/finished.png"
 import { CartContainer, Title } from "./styles";
 import { useNavigate } from "react-router-dom";
