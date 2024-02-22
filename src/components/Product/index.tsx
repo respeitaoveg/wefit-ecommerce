@@ -1,3 +1,4 @@
+import AddCartButton from "../button/AddCartButton";
 import { ContainerProduct, ContainerProductDetail, ContainerProductDetailImageTitle, ProductTitle, ProductPrice } from "./styles";
 
 const productMock = {
@@ -17,6 +18,6 @@ export default function Product() {
       </ContainerProductDetailImageTitle>
       <ProductPrice>R$ {productMock.price}</ProductPrice>
     </ContainerProductDetail>
-    <div>BOTAO</div>
+    <AddCartButton />
   </ContainerProduct>
 }
