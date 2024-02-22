@@ -104,4 +104,16 @@ describe('Cart', () => {
 
     expect(result.current.getCart()).toEqual([])
   })
+
+  test('Should remove all item', () => {
+    const { result, rerender } = renderHook(() => useCart())
+    const product = productMock()
+
+    result.current.addToCart(product)
+    rerender()
+    result.current.addToCart(product)
+    rerender()
+
+    result.current.removeAllFromCart(product.id)
+  })
 })

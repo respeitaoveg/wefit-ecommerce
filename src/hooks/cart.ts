@@ -57,11 +57,20 @@ export default function useCart(): cart {
     setCart([])
   }
 
+  function removeAllFromCart(productId: number) {
+    const currentCart = getCart();
+
+    const updatedCart = currentCart.filter(item => item.id !== productId);
+
+    setCart(updatedCart);
+  }
+
   return {
     getCart,
     getItemCart,
     addToCart,
     removeFromCart,
+    removeAllFromCart,
     clearCart
   }
 }
