@@ -11,15 +11,9 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-function App({ children }: AppProps) {
-  return (
-    <>
-    <Container>
-      <Header />
-      {children}
-    </Container>
-    </>
-  )
+export default function App({ children }: AppProps) {
+  return <Container>
+    <Header />
+    {children}
+  </Container>
 }
-
-export default App
