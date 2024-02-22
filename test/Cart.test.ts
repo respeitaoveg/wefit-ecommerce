@@ -105,7 +105,7 @@ describe('Cart', () => {
     expect(result.current.getCart()).toEqual([])
   })
 
-  test('Should remove all item', () => {
+  test('Should remove all the item', () => {
     const { result, rerender } = renderHook(() => useCart())
     const product = productMock()
 
@@ -115,5 +115,7 @@ describe('Cart', () => {
     rerender()
 
     result.current.removeAllFromCart(product.id)
+
+    expect(result.current.getCart()).toEqual([])
   })
 })
