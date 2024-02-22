@@ -44,8 +44,13 @@ export default function CartCheckoutFooter() {
     return total
   }
 
+  function finishCheckout() {
+    cart.clearCart()
+    navigate('/cart/finished')
+  }
+
   return <CartCheckoutFooterContainer>
-    <Button onClick={() => navigate('/cart/finished')}>FINALIZAR PEDIDO</Button>
+    <Button onClick={finishCheckout}>FINALIZAR PEDIDO</Button>
     <Resume>
       <ResumeTitle>TOTAL</ResumeTitle>
       <ResumePrice>{getTotalPrice()}</ResumePrice>
