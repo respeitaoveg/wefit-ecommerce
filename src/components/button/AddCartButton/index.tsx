@@ -10,11 +10,12 @@ interface AddCartButtonProps {
 }
 export default function AddCartButton({ product }: AddCartButtonProps) {
   const value = useContext(CartContext)
+  const productInCart = value.getItemCart(product.id)
 
-  return <ContainerAddCartButton onClick={() => value.addToCart(product)}>
+  return <ContainerAddCartButton bgColor={!!productInCart} onClick={() => value.addToCart(product)}>
     <Counter>
       <CartPlusIcon />
-      <div>0</div>
+      <div>{productInCart?.quantity || 0}</div>
     </Counter>
     <Description>
       ADICIONAR AO CARRINHO

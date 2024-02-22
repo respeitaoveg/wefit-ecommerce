@@ -78,4 +78,16 @@ describe('Cart', () => {
 
     expect(cart[0].quantity).toEqual(1)
   })
+
+  test('Should get a item from cart by id', () => {
+    const { result, rerender } = renderHook(() => useCart())
+    const product = productMock()
+
+    result.current.addToCart(product)
+    rerender()
+
+    const item = result.current.getItemCart(product.id)
+
+    expect(item).toBeTruthy()
+  })
 })

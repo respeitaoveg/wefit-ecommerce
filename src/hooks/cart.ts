@@ -10,6 +10,10 @@ export default function useCart(): cart {
     return cart
   }
 
+  function getItemCart(productId: number) {
+    return getCart().find(item => item.id === productId)
+  }
+
   function addToCart(product: product) {
     const currentCart = getCart();
     const updatedCart = currentCart.map(item => {
@@ -36,22 +40,23 @@ export default function useCart(): cart {
   function removeFromCart(productId: number) {
     const currentCart = getCart();
     const updatedCart = currentCart.map(item => {
-        if (item.id === productId) {
-            const updatedQuantity = item.quantity - 1;
-            return {
-                ...item,
-                quantity: updatedQuantity <= 0 ? 0 : updatedQuantity
-            };
-        }
-        return item;
+      if (item.id === productId) {
+        const updatedQuantity = item.quantity - 1;
+        return {
+          ...item,
+          quantity: updatedQuantity <= 0 ? 0 : updatedQuantity
+        };
+      }
+      return item;
     }).filter(item => item.quantity > 0)
 
     setCart(updatedCart);
-}
+  }
 
-return {
-  getCart,
-  addToCart,
-  removeFromCart
-}
+  return {
+    getCart,
+    getItemCart,
+    addToCart,
+    removeFromCart
+  }
 }
