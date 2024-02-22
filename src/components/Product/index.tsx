@@ -1,22 +1,23 @@
+import { product } from "../../entities/product.entity";
 import AddCartButton from "../button/AddCartButton";
 import { ContainerProduct, ContainerProductDetail, ContainerProductDetailImageTitle, ProductTitle, ProductPrice } from "./styles";
 
-const productMock = {
-  "id": 1,
-  "title": "Viúva Negra",
-  "price": 9.99,
-  "image": "https://wefit-react-web-test.s3.amazonaws.com/viuva-negra.png"
+
+interface ProductProps {
+  product: product
 }
 
+export default function Product(props: ProductProps) {
+  const { product } = props
 
-export default function Product() {
+
   return <ContainerProduct>
     <ContainerProductDetail>
       <ContainerProductDetailImageTitle>
-        <img src={productMock.image} width={150} alt="" srcset="" />
-        <ProductTitle>{productMock.title}</ProductTitle>
+        <img src={product.image} width={150} alt="" srcset="" />
+        <ProductTitle>{product.title}</ProductTitle>
       </ContainerProductDetailImageTitle>
-      <ProductPrice>R$ {productMock.price}</ProductPrice>
+      <ProductPrice>R$ {product.price}</ProductPrice>
     </ContainerProductDetail>
     <AddCartButton />
   </ContainerProduct>

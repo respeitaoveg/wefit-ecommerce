@@ -10,7 +10,7 @@ export const ContainerProduct = styled.div`
   gap: 16px;
   padding: 10px 11px;
   border-radius: 4px;
-  max-width: 350px;
+  max-width: 300px;
 `;
 
 export const ContainerProductDetail = styled.div`
