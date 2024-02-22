@@ -3,7 +3,8 @@ import App from './App.tsx'
 import DefaultLayout from "./layouts/DefaultLayout/index.tsx";
 import ListProducts from "./components/ListProducts/index.tsx";
 import Cart from "./pages/Cart/index.tsx";
-import Finished from "./pages/Finished/index.tsx";
+import Finished from "./pages/Cart/Finished/index.tsx";
+
 
 export const router = createBrowserRouter([
   {

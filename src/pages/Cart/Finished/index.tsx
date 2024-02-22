@@ -1,5 +1,5 @@
-import finishedImage from "../../assets/images/finished.png"
-import Button from "../../components/button/Button";
+import Button from "../../../components/button/Button";
+import finishedImage from "../../../assets/images/finished.png"
 import { CartContainer, Title } from "./styles";
 
 
