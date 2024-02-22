@@ -16,18 +16,24 @@ export const router = createBrowserRouter([
   },
   {
     path: "cart",
-    element: <App>
-      <DefaultLayout>
-        <Cart />
-      </DefaultLayout>
-    </App>,
+    children: [
+      {
+        index: true,
+        element: <App>
+        <DefaultLayout>
+          <Cart />
+        </DefaultLayout>
+      </App>,
+      },
+      {
+        path: "finished",
+        element: <App>
+          <DefaultLayout>
+            <Finished />
+          </DefaultLayout>
+        </App>,
+      }
+    ]
   },
-  {
-    path: "finished",
-    element: <App>
-      <DefaultLayout>
-        <Finished />
-      </DefaultLayout>
-    </App>,
-  }
+
 ])
