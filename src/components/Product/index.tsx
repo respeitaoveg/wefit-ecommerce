@@ -14,7 +14,7 @@ export default function Product(props: ProductProps) {
   return <ContainerProduct>
     <ContainerProductDetail>
       <ContainerProductDetailImageTitle>
-        <img src={product.image} width={150} alt="" srcset="" />
+        <img src={product.image} width={150} alt="" />
         <ProductTitle>{product.title}</ProductTitle>
       </ContainerProductDetailImageTitle>
       <ProductPrice>R$ {product.price}</ProductPrice>

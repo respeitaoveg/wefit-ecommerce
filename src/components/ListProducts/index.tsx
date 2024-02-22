@@ -44,6 +44,6 @@ const productMock: product[] = [
 
 export default function ListProducts() {
   return <ContainerListProducts>
-    {productMock.map(product => (<Product product={product} />))}
+    {productMock.map((product, index) => (<Product product={product} key={index} />))}
   </ContainerListProducts>
 }

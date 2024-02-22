@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import App from './App.tsx'
 import DefaultLayout from "./layouts/DefaultLayout/index.tsx";
 import ListProducts from "./components/ListProducts/index.tsx";
+import Cart from "./pages/Cart/index.tsx";
+import Finished from "./pages/Finished/index.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -11,5 +13,21 @@ export const router = createBrowserRouter([
         <ListProducts />
       </DefaultLayout>
     </App>
+  },
+  {
+    path: "cart",
+    element: <App>
+      <DefaultLayout>
+        <Cart />
+      </DefaultLayout>
+    </App>,
+  },
+  {
+    path: "finished",
+    element: <App>
+      <DefaultLayout>
+        <Finished />
+      </DefaultLayout>
+    </App>,
   }
 ])
