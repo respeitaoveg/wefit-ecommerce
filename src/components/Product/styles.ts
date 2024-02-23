@@ -11,6 +11,10 @@ export const ContainerProduct = styled.div`
   padding: 10px 11px;
   border-radius: 4px;
   max-width: 300px;
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+    max-width: 100%;
+  }
 `;
 
 export const ContainerProductDetail = styled.div`

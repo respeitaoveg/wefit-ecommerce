@@ -5,12 +5,16 @@ import './assets/css/normalize.css'
 import { RouterProvider } from "react-router-dom";
 import CartProvider from "./contexts/Cart";
 import { router } from './router';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './theme/config';
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <CartProvider>
-      <RouterProvider router={router} />
-    </CartProvider>
+    <ThemeProvider theme={theme}>
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
+    </ThemeProvider>
   </React.StrictMode>
 )
