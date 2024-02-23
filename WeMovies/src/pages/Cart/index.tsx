@@ -7,8 +7,10 @@ import CartCheckout from "../../components/CartCheckout";
 export default function Cart() {
   const cart = useContext(CartContext)
 
+  const isEmpty = !(cart.getCart() && cart.getCart().length > 0)
+
   return <>
-  {(cart.getCart() && cart.getCart().length > 0)
+  {!isEmpty
   ? (
     <CartCheckout></CartCheckout>
   ) : (
