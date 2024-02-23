@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ClientApi } from "../../services/ClientApi";
 import ProductComponent from "../Product";
 import { ContainerListProducts } from "./styles";
@@ -15,7 +15,11 @@ export default function ListProducts() {
     setProducts(aux || [])
   }
 
+  useEffect(() => {
+    getProducts()
+  }, [])
+
   return <ContainerListProducts>
-    {getProducts()).map((product, index) => (<ProductComponent product={product} key={index} />))}
+    {products.map((product, index) => (<ProductComponent product={product} key={index} />))}
   </ContainerListProducts>
 }
