@@ -6,8 +6,8 @@ export class ClientApi {
 
   constructor() {
     this._http = axios.create({
-      // baseURL: 'http://localhost:3000'
-      baseURL: 'http://192.168.0.43:3000'
+      baseURL: 'http://localhost:3000'
+      // baseURL: 'http://192.168.0.43:3000'
     })
   }
 
