@@ -13,7 +13,7 @@ export const HeaderContainer = styled.div`
   }
 `;
 
-export const Title = styled.div`
+export const Title = styled.h1`
   font-weight: 700;
   font-size: 20px;
   cursor: pointer;
