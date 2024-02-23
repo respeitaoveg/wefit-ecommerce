@@ -8,17 +8,7 @@ import { Container, ContainerSpinner, Spinner } from "./assets/css/app.styles";
 export default function App() {
   const [loading, setLoading] = useState(true)
 
-  // useEffect(() => {
-  //   const handleLoad = () => {
-  //     setLoading(true)
-  //   };
-  //     window.addEventListener('load', handleLoad);
-
-  //   return () => {
-  //     window.removeEventListener('load', handleLoad);
-  //   };
-  // }, []);
-
+  // TODO loading
   setTimeout(() => {
     setLoading(false)
   }, 1500)
