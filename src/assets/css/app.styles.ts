@@ -10,10 +10,10 @@ export const Container = styled.div`
 `;
 
 export const ContainerSpinner = styled.div`
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const Spinner = styled.div`

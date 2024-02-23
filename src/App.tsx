@@ -13,21 +13,17 @@ export default function App() {
     setLoading(false)
   }, 1500)
 
-  return <>
+  return <Container>
+  <Header />
+  <DefaultLayout>
     {loading
-      ? <Container>
-        <ContainerSpinner>
-          <Spinner />
-        </ContainerSpinner>
-      </Container>
-      : <Container>
-        <Header />
-        <DefaultLayout>
-          <Outlet />
-        </DefaultLayout>
-      </Container>
+      ? <ContainerSpinner>
+      <Spinner />
+    </ContainerSpinner>
+      : <Outlet />
     }
-  </>
+  </DefaultLayout>
+</Container>
 
 
 }
