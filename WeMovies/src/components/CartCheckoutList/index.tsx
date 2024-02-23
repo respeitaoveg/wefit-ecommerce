@@ -1,19 +1,18 @@
 import { Fragment, useContext } from "react"
 import { CartContext } from "../../contexts/Cart"
-import { useMediaQuery } from "styled-breakpoints/use-media-query"
-import { useTheme } from "styled-components"
 import { CartCheckoutListContainer, Header, HeaderText } from "./styles"
 import DesktopList from "./DesktopList"
 import MobileList from "./MobileList"
+import {useWindowDimensions} from "../../hooks/windowDimentions"
 
 
 export default function CartCheckoutList() {
   const cart = useContext(CartContext)
-  const { breakpoints } = useTheme()
-  const isGtSm = useMediaQuery(breakpoints.only('sm'))
+  const { isSmallerThan640px } = useWindowDimensions()
+
 
   return <CartCheckoutListContainer>
-    {isGtSm && (
+    {!isSmallerThan640px && (
       <Header>
         <HeaderText>PRODUTO</HeaderText>
         <HeaderText></HeaderText>
@@ -24,7 +23,7 @@ export default function CartCheckoutList() {
     )}
     {cart.getCart().map(item => (
       <Fragment key={item.id}>
-        {isGtSm
+        {!isSmallerThan640px
           ? <DesktopList item={item} cart={cart} />
           : <MobileList item={item} cart={cart} />
         }

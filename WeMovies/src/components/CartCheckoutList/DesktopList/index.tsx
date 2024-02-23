@@ -6,6 +6,7 @@ import QuantityInput from "../../inputs/Quantity";
 import { RowDesktopData, RowDesktopDataProductDetail, RowDesktopDataProductDetailTitle, RowDesktopDataProductDetailPrice, RowDesktopDataAction } from "./styles";
 import { Row, TrashAction } from "../styles";
 import currencyFormatter from "../../../utils/currencyFormatter";
+import { useWindowDimensions } from "../../../hooks/windowDimentions";
 
 
 interface DesktopListProps {
@@ -14,11 +15,11 @@ interface DesktopListProps {
 }
 
 export default function DesktopList({ item, cart }: DesktopListProps) {
-  const { breakpoints } = useTheme()
-  const isGtSm = useMediaQuery(breakpoints.only('sm'))
+  const { isSmallerThan640px } = useWindowDimensions()
+
 
   return <Row>
-    <img src={item.image} width={isGtSm ? '90px' : '64px'} alt="" />
+    <img src={item.image} width={!isSmallerThan640px ? '90px' : '64px'} alt="" />
     <RowDesktopData>
       <RowDesktopDataProductDetail>
         <RowDesktopDataProductDetailTitle>

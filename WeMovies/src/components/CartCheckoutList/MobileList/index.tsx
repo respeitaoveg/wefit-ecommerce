@@ -1,11 +1,10 @@
-import { useTheme } from "styled-components"
 import cart, { item } from "../../../entities/cart.entity"
 import TrashIcon from "../../icons/TrashIcon"
 import QuantityInput from "../../inputs/Quantity"
-import { useMediaQuery } from "styled-breakpoints/use-media-query"
 import { RowDetail, RowDetailHeader, RowDetailHeaderTitle, RowDetailHeaderPrice, RowDetailFooter, RowDetailFooterResume, RowDetailFooterResumeSubtotal, RowDetailFooterResumePrice } from "./styles"
 import { Row, TrashAction } from "../styles"
 import currencyFormatter from "../../../utils/currencyFormatter"
+import { useWindowDimensions } from "../../../hooks/windowDimentions"
 
 interface MobileListProps {
   item: item
@@ -14,11 +13,10 @@ interface MobileListProps {
 
 
 export default function MobileList({ cart, item }: MobileListProps) {
-  const { breakpoints } = useTheme()
-  const isGtSm = useMediaQuery(breakpoints.only('sm'))
+  const { isSmallerThan640px } = useWindowDimensions()
 
   return <Row>
-    <img src={item.image} width={isGtSm ? '90px' : '64px'} alt="" />
+    <img src={item.image} width={!isSmallerThan640px ? '90px' : '64px'} alt="" />
     <RowDetail>
       <RowDetailHeader>
         <RowDetailHeaderTitle>{item.title}</RowDetailHeaderTitle>

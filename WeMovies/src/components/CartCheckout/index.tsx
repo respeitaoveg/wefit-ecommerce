@@ -2,17 +2,15 @@ import { CartCheckoutContainer } from "./styles";
 import Divider from "../Divider";
 import CartCheckoutFooter from "../CartCheckoutFooter";
 import CartCheckoutList from "../CartCheckoutList";
-import { useMediaQuery } from "styled-breakpoints/use-media-query";
-import { useTheme } from "styled-components";
+import { useWindowDimensions } from "../../hooks/windowDimentions";
 
 
 export default function CartCheckout() {
-  const { breakpoints } = useTheme()
-  const isGtSm = useMediaQuery(breakpoints.only('sm'))
+  const { isSmallerThan640px } = useWindowDimensions()
 
   return <CartCheckoutContainer>
     <CartCheckoutList />
-    {isGtSm && <Divider />}
+    {!isSmallerThan640px && <Divider />}
     <CartCheckoutFooter />
   </CartCheckoutContainer>
 }

@@ -3,16 +3,14 @@ import BagIcon from "../icons/BagIcon";
 import { CartMenuContainer, TitleContainer, Title, Subtitle } from "./styles";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/Cart";
-import { useTheme } from "styled-components";
-import { useMediaQuery } from 'styled-breakpoints/use-media-query';
-
+import { useWindowDimensions } from "../../hooks/windowDimentions";
 
 
 export default function CartMenu() {
-  const navigate = useNavigate();
-  const cart = useContext(CartContext);
-  const { breakpoints } = useTheme()
-  const isGtSm = useMediaQuery(breakpoints.only('sm'))
+  const navigate = useNavigate()
+  const cart = useContext(CartContext)
+  const { isSmallerThan640px } = useWindowDimensions()
+
 
   const quantityDifferentProducts = cart.getCart().length
 
@@ -24,7 +22,7 @@ export default function CartMenu() {
 
   return <CartMenuContainer onClick={() => navigate('/cart')}>
     <TitleContainer>
-      {isGtSm && <Title>Meu Carrinho</Title>}
+      {!isSmallerThan640px && <Title>Meu Carrinho</Title>}
       <Subtitle>{quantityDifferentProducts} {changeTextItem()}</Subtitle>
     </TitleContainer>
     <BagIcon />
