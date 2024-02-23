@@ -13,9 +13,10 @@ export default function AddCartButton({ product }: AddCartButtonProps) {
   const productInCart = cart.getItemCart(product.id)
 
   function changeTextItemAdded() {
-    if (productInCart) return 'ITEM ADICIONADO'
+    if (!productInCart) return 'ADICIONAR AO CARRINHO'
 
-    return 'ADICIONAR AO CARRINHO'
+    if (productInCart.quantity === 1) return 'ITEM ADICIONADO'
+    if (productInCart.quantity > 1) return 'ITENS ADICIONADOS'
   }
 
   return <ContainerAddCartButton $bgColor={!!productInCart} onClick={() => cart.addToCart(product)}>
