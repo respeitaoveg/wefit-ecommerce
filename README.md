@@ -23,3 +23,20 @@ bun run test
 ```shell
 bun dev
 ```
+
+### Tecnologias
+* Bun
+* Vite
+* Vitest
+* React
+* Typescript
+* React Router
+* Styled components
+* Styled breakpoints
+* Eslint
+* Testing library
+* Jsdom
+* Json server
+
+### Observações
+* É possível adicionar a variável de ambiente VITE_HOST no .env para rodar um network local e testar no celular.
