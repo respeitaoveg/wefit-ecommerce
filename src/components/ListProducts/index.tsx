@@ -20,6 +20,6 @@ export default function ListProducts() {
   }, [])
 
   return <ContainerListProducts>
-    {products.map((product, index) => (<ProductComponent product={product} key={index} />))}
+    {products.map((product) => (<ProductComponent product={product} key={product.id} />))}
   </ContainerListProducts>
 }

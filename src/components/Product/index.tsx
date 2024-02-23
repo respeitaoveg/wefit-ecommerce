@@ -11,7 +11,6 @@ interface ProductProps {
 export default function Product(props: ProductProps) {
   const { product } = props
 
-
   return <ContainerProduct>
     <ContainerProductDetail>
       <ContainerProductDetailImageTitle>

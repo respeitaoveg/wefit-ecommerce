@@ -24,7 +24,10 @@ export default function CartCheckoutList() {
     )}
     {cart.getCart().map(item => (
       <Fragment key={item.id}>
-        {isGtSm ? DesktopList({item, cart}) : MobileList({item, cart})}
+        {isGtSm
+          ? <DesktopList item={item} cart={cart} />
+          : <MobileList item={item} cart={cart} />
+        }
       </Fragment>
     ))}
   </CartCheckoutListContainer>
