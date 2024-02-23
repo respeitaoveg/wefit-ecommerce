@@ -1,8 +1,9 @@
 # WeFit - Desafios
 
-## Primeiro - js
+## Primeiro - js - (webTest)
+Transformar através do JS (wefit-test/js/main.js) o HTML/DOM de acordo com os prints (/Roteiro-teste-WeFit).
 
-## Segundo - WeMovies
+## Segundo - WeMovies Ecommerce - (WeMovies)
 O desafio consiste na criação de um site de e-commerce simplificado do zero, onde o candidato terá que criar um fluxo com três módulos/telas.
 
 ### Instruções
