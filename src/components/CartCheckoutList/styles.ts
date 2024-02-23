@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Header = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
   gap: 52px;
   align-items: start;
 `
@@ -17,7 +17,7 @@ export const HeaderText = styled.div`
 export const Row = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
   gap: 52px;
   align-items: center;
 
