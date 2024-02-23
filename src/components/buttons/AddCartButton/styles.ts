@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerAddCartButton = styled.div< {$bgColor: boolean}>`
+export const ContainerAddCartButton = styled.button< {$bgColor: boolean}>`
   background-color: ${props => props.$bgColor ? '#039B00' : '#009EDD'};
   color: #FFF;
   display: flex;
@@ -10,9 +10,10 @@ export const ContainerAddCartButton = styled.div< {$bgColor: boolean}>`
   gap: 12px;
   padding: 8px;
   border-radius: 4px;
-  height: 24px;
+  height: 40px;
   width: calc(100% - 16px);
   cursor: pointer;
+  border-style: none;
 `;
 
 export const Description = styled.div`
