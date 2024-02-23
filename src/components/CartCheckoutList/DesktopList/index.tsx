@@ -5,6 +5,7 @@ import TrashIcon from "../../icons/TrashIcon";
 import QuantityInput from "../../inputs/Quantity";
 import { RowDesktopData, RowDesktopDataProductDetail, RowDesktopDataProductDetailTitle, RowDesktopDataProductDetailPrice, RowDesktopDataAction } from "./styles";
 import { Row, TrashAction } from "../styles";
+import currencyFormatter from "../../../utils/currencyFormatter";
 
 
 interface DesktopListProps {
@@ -24,7 +25,7 @@ export default function DesktopList({ item, cart }: DesktopListProps) {
           {item.title}
         </RowDesktopDataProductDetailTitle>
         <RowDesktopDataProductDetailPrice>
-          {item.price}
+          {currencyFormatter(item.price)}
         </RowDesktopDataProductDetailPrice>
       </RowDesktopDataProductDetail>
     </RowDesktopData>
@@ -37,7 +38,7 @@ export default function DesktopList({ item, cart }: DesktopListProps) {
     </RowDesktopData>
     <RowDesktopData>
       <RowDesktopDataProductDetailPrice>
-        R$ {item.quantity * item.price}
+        {currencyFormatter(item.quantity * item.price)}
       </RowDesktopDataProductDetailPrice>
     </RowDesktopData>
     <RowDesktopDataAction>

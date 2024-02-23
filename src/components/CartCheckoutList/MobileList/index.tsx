@@ -5,6 +5,7 @@ import QuantityInput from "../../inputs/Quantity"
 import { useMediaQuery } from "styled-breakpoints/use-media-query"
 import { RowDetail, RowDetailHeader, RowDetailHeaderTitle, RowDetailHeaderPrice, RowDetailFooter, RowDetailFooterResume, RowDetailFooterResumeSubtotal, RowDetailFooterResumePrice } from "./styles"
 import { Row, TrashAction } from "../styles"
+import currencyFormatter from "../../../utils/currencyFormatter"
 
 interface MobileListProps {
   item: item
@@ -21,7 +22,7 @@ export default function MobileList({ cart, item }: MobileListProps) {
     <RowDetail>
       <RowDetailHeader>
         <RowDetailHeaderTitle>{item.title}</RowDetailHeaderTitle>
-        <RowDetailHeaderPrice>R$ {item.price}</RowDetailHeaderPrice>
+        <RowDetailHeaderPrice>{currencyFormatter(item.price)}</RowDetailHeaderPrice>
         <TrashAction onClick={() => cart.removeAllFromCart(item.id)}>
           <TrashIcon />
         </TrashAction>
@@ -37,7 +38,7 @@ export default function MobileList({ cart, item }: MobileListProps) {
             SUBTOTAL
           </RowDetailFooterResumeSubtotal>
           <RowDetailFooterResumePrice>
-            R$ {item.price * item.quantity}
+            {currencyFormatter(item.price * item.quantity)}
           </RowDetailFooterResumePrice>
         </RowDetailFooterResume>
       </RowDetailFooter>

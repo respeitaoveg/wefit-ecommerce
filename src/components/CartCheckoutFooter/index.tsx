@@ -7,6 +7,7 @@ import Divider from "../Divider";
 import DesktopCartCheckoutFooter from "./DesktopCartCheckoutFooter";
 import MobileCartCheckoutFooter from "./MobileCartCheckoutFooter";
 import { CartCheckoutFooterContainer } from "./styles";
+import currencyFormatter from "../../utils/currencyFormatter";
 
 
 export default function CartCheckoutFooter() {
@@ -22,7 +23,7 @@ export default function CartCheckoutFooter() {
       total += (item.price * item.quantity)
     }
 
-    return total
+    return currencyFormatter(total)
   }
 
   function finishCheckout() {

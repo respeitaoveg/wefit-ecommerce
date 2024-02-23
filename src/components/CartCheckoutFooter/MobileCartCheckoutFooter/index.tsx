@@ -4,7 +4,7 @@ import { MobileCartCheckoutFooterContainer, MobileCartCheckoutFooterResume, Mobi
 
 interface MobileCartCheckoutFooterProps {
   finishCheckout: () => void
-  getTotalPrice: () => number
+  getTotalPrice: () => string
 }
 
 export default function MobileCartCheckoutFooter({finishCheckout, getTotalPrice} : MobileCartCheckoutFooterProps) {

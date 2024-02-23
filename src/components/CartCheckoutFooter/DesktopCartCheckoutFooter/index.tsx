@@ -3,7 +3,7 @@ import { Resume, ResumeTitle, ResumePrice } from "./styles";
 
 interface DesktopCartCheckoutFooterProps {
   finishCheckout: () => void
-  getTotalPrice: () => number
+  getTotalPrice: () => string
 }
 
 export default function DesktopCartCheckoutFooter({finishCheckout, getTotalPrice} : DesktopCartCheckoutFooterProps) {
