@@ -115,6 +115,7 @@ describe('Cart', () => {
     rerender()
 
     result.current.removeAllFromCart(product.id)
+    rerender()
 
     expect(result.current.getCart()).toEqual([])
   })
