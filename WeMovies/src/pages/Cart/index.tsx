@@ -11,10 +11,8 @@ export default function Cart() {
 
   return <>
   {!isEmpty
-  ? (
-    <CartCheckout></CartCheckout>
-  ) : (
-    <CartEmpty></CartEmpty>
-  )}
+    ? <CartCheckout />
+    : <CartEmpty />
+  }
   </>
 }
