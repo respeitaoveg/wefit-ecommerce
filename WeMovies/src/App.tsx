@@ -8,7 +8,6 @@ import { Container, ContainerSpinner, Spinner } from "./assets/css/app.styles";
 export default function App() {
   const [loading, setLoading] = useState(true)
 
-  // TODO loading
   setTimeout(() => {
     setLoading(false)
   }, 1500)
