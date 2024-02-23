@@ -30,3 +30,12 @@ export const Row = styled.div`
 export const TrashAction = styled.div`
   cursor: pointer;
 `
+
+export const CartCheckoutListContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+`

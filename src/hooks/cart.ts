@@ -47,6 +47,7 @@ export default function useCart(): cart {
           quantity: updatedQuantity <= 0 ? 0 : updatedQuantity
         };
       }
+
       return item;
     }).filter(item => item.quantity > 0)
 

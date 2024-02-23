@@ -2,7 +2,7 @@ import { Fragment, useContext } from "react"
 import { CartContext } from "../../contexts/Cart"
 import { useMediaQuery } from "styled-breakpoints/use-media-query"
 import { useTheme } from "styled-components"
-import { Header, HeaderText } from "./styles"
+import { CartCheckoutListContainer, Header, HeaderText } from "./styles"
 import DesktopList from "./DesktopList"
 import MobileList from "./MobileList"
 
@@ -12,7 +12,7 @@ export default function CartCheckoutList() {
   const { breakpoints } = useTheme()
   const isGtSm = useMediaQuery(breakpoints.only('sm'))
 
-  return <>
+  return <CartCheckoutListContainer>
     {isGtSm && (
       <Header>
         <HeaderText>PRODUTO</HeaderText>
@@ -27,5 +27,5 @@ export default function CartCheckoutList() {
         {isGtSm ? DesktopList({item, cart}) : MobileList({item, cart})}
       </Fragment>
     ))}
-  </>
+  </CartCheckoutListContainer>
 }

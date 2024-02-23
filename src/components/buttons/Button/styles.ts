@@ -4,6 +4,7 @@ export const ButtonContainer = styled.div`
   background-color: #009EDD;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 60px;
   height: 40px;
   border-radius: 4px;

@@ -14,5 +14,7 @@ export const CartCheckoutContainer = styled.div`
 
   ${({ theme }) => theme.breakpoints.down('sm')} {
     padding: 16px;
+    height: calc(100% - 32px);
+    justify-content: space-between;
   }
 `
