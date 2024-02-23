@@ -12,7 +12,7 @@ export default function CartMenu() {
   const navigate = useNavigate();
   const cart = useContext(CartContext);
   const { breakpoints } = useTheme()
-  const isSm = useMediaQuery(breakpoints.down('sm'))
+  const isGtSm = useMediaQuery(breakpoints.only('sm'))
 
   const quantityDifferentProducts = cart.getCart().length
 
@@ -22,11 +22,9 @@ export default function CartMenu() {
     return 'itens'
   }
 
-  console.log(isSm)
-
   return <CartMenuContainer onClick={() => navigate('/cart')}>
     <TitleContainer>
-      {!isSm && <Title>Meu Carrinho</Title>}
+      {isGtSm && <Title>Meu Carrinho</Title>}
       <Subtitle>{quantityDifferentProducts} {changeTextItem()}</Subtitle>
     </TitleContainer>
     <BagIcon />

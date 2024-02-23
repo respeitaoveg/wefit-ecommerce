@@ -9,7 +9,7 @@ export const HeaderContainer = styled.div`
   height: 38px;
 
   ${({ theme }) => theme.breakpoints.down('sm')} {
-    height: auto;
+    height: 32px;
   }
 `;
 

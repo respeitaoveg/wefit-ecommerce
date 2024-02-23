@@ -1,52 +1,30 @@
 import { Fragment, useContext } from "react"
 import { CartContext } from "../../contexts/Cart"
-import TrashIcon from "../icons/TrashIcon"
-import { Header, HeaderText, Row, RowData, RowDataProductDetail, RowDataProductDetailTitle, RowDataProductDetailPrice, RowDataAction, TrashAction } from "./styles"
-import QuantityInput from "../inputs/Quantity"
+import { useMediaQuery } from "styled-breakpoints/use-media-query"
+import { useTheme } from "styled-components"
+import { Header, HeaderText } from "./styles"
+import DesktopList from "./DesktopList"
+import MobileList from "./MobileList"
+
 
 export default function CartCheckoutList() {
   const cart = useContext(CartContext)
+  const { breakpoints } = useTheme()
+  const isGtSm = useMediaQuery(breakpoints.only('sm'))
 
   return <>
-    <Header>
-      <HeaderText>PRODUTO</HeaderText>
-      <HeaderText></HeaderText>
-      <HeaderText>QTD</HeaderText>
-      <HeaderText>SUBTOTAL</HeaderText>
-      <HeaderText></HeaderText>
-    </Header>
+    {isGtSm && (
+      <Header>
+        <HeaderText>PRODUTO</HeaderText>
+        <HeaderText></HeaderText>
+        <HeaderText>QTD</HeaderText>
+        <HeaderText>SUBTOTAL</HeaderText>
+        <HeaderText></HeaderText>
+      </Header>
+    )}
     {cart.getCart().map(item => (
       <Fragment key={item.id}>
-        <Row>
-          <img src={item.image} width='90px' alt="" />
-          <RowData>
-            <RowDataProductDetail>
-              <RowDataProductDetailTitle>
-                {item.title}
-              </RowDataProductDetailTitle>
-              <RowDataProductDetailPrice>
-                {item.price}
-              </RowDataProductDetailPrice>
-            </RowDataProductDetail>
-          </RowData>
-          <RowData>
-            <QuantityInput
-              add={() => cart.addToCart(item)}
-              quantity={item.quantity}
-              remove={() => cart.removeFromCart(item.id)}
-            />
-          </RowData>
-          <RowData>
-            <RowDataProductDetailPrice>
-              R$ {item.quantity * item.price}
-            </RowDataProductDetailPrice>
-          </RowData>
-          <RowDataAction>
-            <TrashAction onClick={() => cart.removeAllFromCart(item.id)}>
-              <TrashIcon />
-            </TrashAction>
-          </RowDataAction>
-        </Row>
+        {isGtSm ? DesktopList({item, cart}) : MobileList({item, cart})}
       </Fragment>
     ))}
   </>

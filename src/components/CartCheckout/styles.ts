@@ -11,4 +11,8 @@ export const CartCheckoutContainer = styled.div`
   border-radius: 4px;
   padding: 24px;
   max-width: calc(950px - 48px);
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+    padding: 16px;
+  }
 `

@@ -13,7 +13,7 @@ export const QuantityInputButton = styled.div`
   cursor: pointer;
 `
 
-export const QuantityRealInput = styled.input.attrs({ type: "number" })`
+export const QuantityRealInput = styled.input.attrs({ type: "text" })`
   width: 62px;
   display: flex;
   flex-direction: row;
@@ -24,4 +24,9 @@ export const QuantityRealInput = styled.input.attrs({ type: "number" })`
   color: #2F2E41;
   font-weight: 400;
   font-size: 14px;
+
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+    max-width: 40px;
+  }
 `
