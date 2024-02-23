@@ -1,22 +1,43 @@
 import Header from "./layouts/Header"
-import styled from "styled-components";
 import DefaultLayout from "./layouts/DefaultLayout";
 import { Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Container, ContainerSpinner, Spinner } from "./assets/css/app.styles";
 
-const Container = styled.div`
-  max-width: 960px;
-  margin: 0 auto;
-
-  ${({ theme }) => theme.breakpoints.down('sm')} {
-    height: 100vh;
-  }
-`;
 
 export default function App() {
-  return <Container>
-    <Header />
-    <DefaultLayout>
-      <Outlet />
-    </DefaultLayout>
-  </Container>
+  const [loading, setLoading] = useState(true)
+
+  // useEffect(() => {
+  //   const handleLoad = () => {
+  //     setLoading(true)
+  //   };
+  //     window.addEventListener('load', handleLoad);
+
+  //   return () => {
+  //     window.removeEventListener('load', handleLoad);
+  //   };
+  // }, []);
+
+  setTimeout(() => {
+    setLoading(false)
+  }, 1500)
+
+  return <>
+    {loading
+      ? <Container>
+        <ContainerSpinner>
+          <Spinner />
+        </ContainerSpinner>
+      </Container>
+      : <Container>
+        <Header />
+        <DefaultLayout>
+          <Outlet />
+        </DefaultLayout>
+      </Container>
+    }
+  </>
+
+
 }

@@ -7,7 +7,7 @@ export default function useCart(): cart {
   const [cart, setCart] = useState<item[] | []>([])
 
   function getCart() {
-    return cart
+    return cart || []
   }
 
   function getItemCart(productId: number) {
@@ -38,8 +38,7 @@ export default function useCart(): cart {
   }
 
   function removeFromCart(productId: number) {
-    const currentCart = getCart();
-    const updatedCart = currentCart.map(item => {
+    setCart(old => old.map(item => {
       if (item.id === productId) {
         const updatedQuantity = item.quantity - 1;
         return {
@@ -49,9 +48,7 @@ export default function useCart(): cart {
       }
 
       return item;
-    }).filter(item => item.quantity > 0)
-
-    setCart(updatedCart);
+    }).filter(item => item.quantity > 0));
   }
 
   function clearCart() {
